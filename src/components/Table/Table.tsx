@@ -4,8 +4,8 @@ import { useState } from "react";
 import { useGetRequests } from "../../hook/useGetRequests";
 
 export function Table() {
-  const [orders, setOrders] = useState<Order[]>(useGetRequests());
-  const [expandedRow, setExpandedRow] = useState<string | null>(null);
+    const [orders, _setOrders] = useState<Order[]>(useGetRequests());
+    const [expandedRow, setExpandedRow] = useState<string | null>(null);
 
   const toggleRowExpand = (orderId: string) => {
     if (expandedRow === orderId) {
