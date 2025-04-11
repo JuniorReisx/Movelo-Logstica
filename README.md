@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+```markdown
+# 🚚 Movelo - Logistics
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Movelo is a simulated logistics order system built with TypeScript. It provides mock data for delivery tracking, ideal for frontend development, UI testing, or building logistics dashboards.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Project Overview
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+This project simulates a list of logistics orders, including detailed tracking information such as:
+
+- Order ID and date  
+- Product/item and quantity  
+- Delivery status  
+- Estimated delivery date  
+- Recipient's address  
+- Current delivery location  
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── data/
+│   └── data.ts            # Simulated orders
+├── hooks/
+│   └── useGetRequests.ts      # Custom hook to retrieve data
+├── types/
+│   └── index.ts           # Type definitions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔄 Usage
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Import the simulated orders in your components or services:
+
+```ts
+import { useGetData } from "../hooks/useGetData";
+
+const orders = useGetData(); // Returns the full list of simulated orders
 ```
+
+---
+
+## 💡 Why Movelo?
+
+The name **Movelo** reflects motion and logistics – fast, reliable, and modern. The project helps developers design and test UI and backend logic before integrating with a real API.
+
+---
+
+## 🛠️ Tech Stack
+
+- TypeScript
+- Modular Architecture (Data, Hooks, Types)
+- React
+- Tailwind
+- Lucide
+- Clean code structure
+
+---
+
+## 📌 Future Improvements
+
+- REST API integration
+- Admin panel for tracking visualization
+- Filters for status, date, city, and more
+- Responsive dashboard with charts
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
